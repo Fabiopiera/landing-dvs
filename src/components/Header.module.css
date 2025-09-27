@@ -1,0 +1,69 @@
+/* header fijo con entrada y efecto al hacer scroll */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+
+  /* fondo inicial translúcido (para verse sobre la imagen) */
+  background: rgba(18, 18, 18, 0.25);
+  backdrop-filter: blur(6px);
+
+  /* animación de entrada (slide down) */
+  transform: translateY(-100%);
+  animation: slideDown 380ms ease forwards;
+  transition: background-color 220ms ease, box-shadow 220ms ease,
+    padding 220ms ease;
+  box-sizing: border-box;
+}
+
+/* cuando se hace scroll le ponemos más contraste */
+.header.scrolled {
+  background: rgba(18, 18, 18, 0.85);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* contenedor interno para centrar el logo y controlar alturas */
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centrado horizontal */
+  box-sizing: border-box;
+}
+
+/* tamaño del logo (móvil-first) */
+.logo {
+  display: block;
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  -webkit-user-drag: none;
+  user-select: none;
+  transition: transform 220ms ease;
+}
+
+/* pequeño "pop" al tocar (solo para mejorar sensación en desktop) */
+.logo:active {
+  transform: scale(0.98);
+}
+
+/* entrada slide */
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* ajustes para pantallas más grandes */
+@media (min-width: 720px) {
+  .inner {
+    padding: 12px 20px;
+  }
+  .logo {
+    height: 52px;
+  }
+}

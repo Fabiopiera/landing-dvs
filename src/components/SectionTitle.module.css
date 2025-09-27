@@ -1,0 +1,14 @@
+.title {
+  text-align: center;
+  color: #ffffff; /* blanco sobre fondo oscuro */
+  font-size: 1.8rem;
+  margin: 12px 0;
+  font-weight: 600;
+}
+
+@media (min-width: 720px) {
+  .title {
+    font-size: 2.4rem;
+    margin: 16px 0;
+  }
+}

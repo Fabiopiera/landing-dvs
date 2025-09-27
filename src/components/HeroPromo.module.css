@@ -1,0 +1,36 @@
+.hero {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* imagen pegada arriba */
+  gap: 0;
+  min-height: auto; /* no ocupa toda la pantalla */
+}
+
+.imageWrap {
+  width: 100%;
+  max-width: 480px; /* opcional, ajustá según tu diseño */
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.image {
+  display: block; /* evita espacios por inline */
+  width: 100%;
+  height: auto;
+  border-radius: 16px; /* podés ajustar el valor: 8px, 12px, 50% si querés círculo */
+  object-fit: contain;
+
+  /* Fade-in */
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
