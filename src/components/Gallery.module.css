@@ -134,3 +134,29 @@
     padding: 8px;
   }
 }
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 10%;
+  z-index: 2100;
+  transition: background 0.2s ease;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.arrow.left {
+  left: 16px;
+}
+
+.arrow.right {
+  right: 16px;
+}
